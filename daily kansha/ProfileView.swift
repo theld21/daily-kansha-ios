@@ -160,26 +160,26 @@ struct ProfileView: View {
                     }
 
                     // Clear All Data Section
-                    ModernSection(title: languageManager.localized("clear_all_data"), icon: "person.circle.fill") {
-                        VStack(spacing: DesignSystem.Spacing.md) {
-                            Button(action: { store.clearAll(); showingAlert = true }) {
-                                HStack {
-                                    Image(systemName: "trash.circle.fill")
-                                        .font(.system(size: 16, weight: .medium))
-                                    Text(languageManager.localized("clear_all_data"))
-                                        .font(DesignSystem.Typography.callout)
-                                        .fontWeight(.medium)
-                                }
-                                .foregroundColor(.red)
-                                .frame(maxWidth: .infinity)
-                                .padding(DesignSystem.Spacing.md)
-                                .background(
-                                    RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.md)
-                                        .fill(Color.red.opacity(0.1))
-                                )
-                            }
-                        }
-                    }
+//                    ModernSection(title: languageManager.localized("clear_all_data"), icon: "person.circle.fill") {
+//                        VStack(spacing: DesignSystem.Spacing.md) {
+//                            Button(action: { store.clearAll(); showingAlert = true }) {
+//                                HStack {
+//                                    Image(systemName: "trash.circle.fill")
+//                                        .font(.system(size: 16, weight: .medium))
+//                                    Text(languageManager.localized("clear_all_data"))
+//                                        .font(DesignSystem.Typography.callout)
+//                                        .fontWeight(.medium)
+//                                }
+//                                .foregroundColor(.red)
+//                                .frame(maxWidth: .infinity)
+//                                .padding(DesignSystem.Spacing.md)
+//                                .background(
+//                                    RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.md)
+//                                        .fill(Color.red.opacity(0.1))
+//                                )
+//                            }
+//                        }
+//                    }
 
                     Spacer(minLength: DesignSystem.Spacing.xxl)
                 }
