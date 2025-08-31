@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BBE3CC92E64312700E42445 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC32E64312600E42445 /* CalendarView.swift */; };
+		3BBE3CCA2E64312700E42445 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC42E64312600E42445 /* Components.swift */; };
+		3BBE3CCB2E64312700E42445 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC52E64312600E42445 /* LanguageManager.swift */; };
+		3BBE3CCC2E64312700E42445 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC62E64312700E42445 /* HomeView.swift */; };
+		3BBE3CCD2E64312700E42445 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC72E64312700E42445 /* ProfileView.swift */; };
+		3BBE3CCE2E64312700E42445 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE3CC82E64312700E42445 /* Models.swift */; };
+		3BBE3CD32E6434D900E42445 /* ja.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE3CD02E6434D800E42445 /* ja.json */; };
+		3BBE3CD42E6434D900E42445 /* vi.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE3CD12E6434D900E42445 /* vi.json */; };
+		3BBE3CD52E6434D900E42445 /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE3CD22E6434D900E42445 /* en.json */; };
 		3BE1B35C2E4F7366008282B2 /* daily_kanshaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1B35B2E4F7366008282B2 /* daily_kanshaApp.swift */; };
 		3BE1B35E2E4F7366008282B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1B35D2E4F7366008282B2 /* ContentView.swift */; };
 		3BE1B3602E4F7368008282B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1B35F2E4F7368008282B2 /* Assets.xcassets */; };
@@ -14,6 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BBE3CC32E64312600E42445 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		3BBE3CC42E64312600E42445 /* Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		3BBE3CC52E64312600E42445 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		3BBE3CC62E64312700E42445 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3BBE3CC72E64312700E42445 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3BBE3CC82E64312700E42445 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3BBE3CD02E6434D800E42445 /* ja.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ja.json; sourceTree = "<group>"; };
+		3BBE3CD12E6434D900E42445 /* vi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vi.json; sourceTree = "<group>"; };
+		3BBE3CD22E6434D900E42445 /* en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = en.json; sourceTree = "<group>"; };
 		3BE1B3582E4F7366008282B2 /* daily kansha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daily kansha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE1B35B2E4F7366008282B2 /* daily_kanshaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daily_kanshaApp.swift; sourceTree = "<group>"; };
 		3BE1B35D2E4F7366008282B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +70,15 @@
 		3BE1B35A2E4F7366008282B2 /* daily kansha */ = {
 			isa = PBXGroup;
 			children = (
+				3BBE3CD22E6434D900E42445 /* en.json */,
+				3BBE3CD02E6434D800E42445 /* ja.json */,
+				3BBE3CD12E6434D900E42445 /* vi.json */,
+				3BBE3CC32E64312600E42445 /* CalendarView.swift */,
+				3BBE3CC42E64312600E42445 /* Components.swift */,
+				3BBE3CC62E64312700E42445 /* HomeView.swift */,
+				3BBE3CC52E64312600E42445 /* LanguageManager.swift */,
+				3BBE3CC82E64312700E42445 /* Models.swift */,
+				3BBE3CC72E64312700E42445 /* ProfileView.swift */,
 				3BE1B35B2E4F7366008282B2 /* daily_kanshaApp.swift */,
 				3BE1B35D2E4F7366008282B2 /* ContentView.swift */,
 				3BE1B35F2E4F7368008282B2 /* Assets.xcassets */,
@@ -127,7 +154,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBE3CD52E6434D900E42445 /* en.json in Resources */,
+				3BBE3CD32E6434D900E42445 /* ja.json in Resources */,
 				3BE1B3642E4F7368008282B2 /* Preview Assets.xcassets in Resources */,
+				3BBE3CD42E6434D900E42445 /* vi.json in Resources */,
 				3BE1B3602E4F7368008282B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE1B35E2E4F7366008282B2 /* ContentView.swift in Sources */,
+				3BBE3CCA2E64312700E42445 /* Components.swift in Sources */,
 				3BE1B35C2E4F7366008282B2 /* daily_kanshaApp.swift in Sources */,
+				3BBE3CCE2E64312700E42445 /* Models.swift in Sources */,
+				3BBE3CCC2E64312700E42445 /* HomeView.swift in Sources */,
+				3BBE3CC92E64312700E42445 /* CalendarView.swift in Sources */,
+				3BBE3CCD2E64312700E42445 /* ProfileView.swift in Sources */,
+				3BBE3CCB2E64312700E42445 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"daily kansha/Preview Content\"";
+				DEVELOPMENT_TEAM = 3C9JXZ77Y6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -277,7 +314,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -285,7 +322,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theld.me21.daily-kansha";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -301,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"daily kansha/Preview Content\"";
+				DEVELOPMENT_TEAM = 3C9JXZ77Y6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -313,7 +353,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -321,7 +361,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theld.me21.daily-kansha";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
