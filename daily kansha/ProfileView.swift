@@ -20,17 +20,14 @@ struct ProfileView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: DesignSystem.Spacing.lg) {
-                    // Name Section
                     ModernSection(title: languageManager.localized("profile"), icon: "person.circle.fill") {
                         VStack(spacing: DesignSystem.Spacing.md) {
                             ModernTextField(text: $username, placeholder: languageManager.localized("name_optional"))
                         }
                     }
 
-                    // Display Settings Section
                     ModernSection(title: languageManager.localized("display"), icon: "paintbrush.fill") {
                         VStack(spacing: DesignSystem.Spacing.md) {
-                            // Dark Mode Toggle
                             HStack {
                                 Label(isDarkMode ? languageManager.localized("dark_mode") : languageManager.localized("light_mode"), 
                                       systemImage: isDarkMode ? "moon.fill" : "sun.max.fill")
@@ -45,7 +42,6 @@ struct ProfileView: View {
                                     .fill(Color.elevatedBackground)
                             )
 
-                            // Accent Color Picker
                             VStack(alignment: .leading, spacing: DesignSystem.Spacing.sm) {
                                 Text(languageManager.localized("accent_color"))
                                     .font(DesignSystem.Typography.callout)
@@ -69,7 +65,6 @@ struct ProfileView: View {
                                     .fill(Color.elevatedBackground)
                             )
 
-                            // Language Picker
                             VStack(alignment: .leading, spacing: DesignSystem.Spacing.sm) {
                                 Text(languageManager.localized("language"))
                                     .font(DesignSystem.Typography.callout)
@@ -94,7 +89,6 @@ struct ProfileView: View {
                         }
                     }
 
-                    // Reminder Section
                     ModernSection(title: languageManager.localized("reminder"), icon: "bell.fill") {
                         VStack(spacing: DesignSystem.Spacing.md) {
                             HStack {
@@ -140,7 +134,6 @@ struct ProfileView: View {
                         }
                     }
 
-                    // About Section
                     ModernSection(title: languageManager.localized("about"), icon: "info.circle.fill") {
                         VStack(alignment: .leading, spacing: DesignSystem.Spacing.md) {
                             Text(languageManager.localized("about_description"))
@@ -159,27 +152,7 @@ struct ProfileView: View {
                         )
                     }
 
-                    // Clear All Data Section
-//                    ModernSection(title: languageManager.localized("clear_all_data"), icon: "person.circle.fill") {
-//                        VStack(spacing: DesignSystem.Spacing.md) {
-//                            Button(action: { store.clearAll(); showingAlert = true }) {
-//                                HStack {
-//                                    Image(systemName: "trash.circle.fill")
-//                                        .font(.system(size: 16, weight: .medium))
-//                                    Text(languageManager.localized("clear_all_data"))
-//                                        .font(DesignSystem.Typography.callout)
-//                                        .fontWeight(.medium)
-//                                }
-//                                .foregroundColor(.red)
-//                                .frame(maxWidth: .infinity)
-//                                .padding(DesignSystem.Spacing.md)
-//                                .background(
-//                                    RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.md)
-//                                        .fill(Color.red.opacity(0.1))
-//                                )
-//                            }
-//                        }
-//                    }
+
 
                     Spacer(minLength: DesignSystem.Spacing.xxl)
                 }

@@ -3,7 +3,6 @@ import UIKit
 
 // MARK: - Design System
 struct DesignSystem {
-    // Typography
     struct Typography {
         static let largeTitle = Font.system(size: 34, weight: .bold, design: .rounded)
         static let title = Font.system(size: 28, weight: .semibold, design: .rounded)
@@ -15,7 +14,6 @@ struct DesignSystem {
         static let footnote = Font.system(size: 13, weight: .regular, design: .default)
     }
     
-    // Spacing
     struct Spacing {
         static let xs: CGFloat = 4
         static let sm: CGFloat = 8
@@ -25,7 +23,6 @@ struct DesignSystem {
         static let xxl: CGFloat = 48
     }
     
-    // Corner Radius
     struct CornerRadius {
         static let sm: CGFloat = 8
         static let md: CGFloat = 12
@@ -33,7 +30,6 @@ struct DesignSystem {
         static let xl: CGFloat = 20
     }
     
-    // Shadows
     struct Shadow {
         static let light = Color.black.opacity(0.05)
         static let medium = Color.black.opacity(0.1)
@@ -41,7 +37,6 @@ struct DesignSystem {
     }
 }
 
-// MARK: - Accent colors mapping with modern colors
 extension Color {
     static func accentMapped(_ key: String) -> Color {
         switch key {
@@ -56,12 +51,10 @@ extension Color {
         }
     }
     
-    // Modern background colors
     static let cardBackground = Color(UIColor.secondarySystemBackground)
     static let elevatedBackground = Color(UIColor.tertiarySystemBackground)
 }
 
-// MARK: - Keyboard utilities
 extension UIApplication {
     static func hideKeyboard() {
         DispatchQueue.main.async {
@@ -70,7 +63,99 @@ extension UIApplication {
     }
 }
 
-// MARK: - Modern UITextView wrapper with Done accessory
+struct SmartPlaceholderTextView: UIViewRepresentable {
+    @Binding var text: String
+    var placeholder: String
+    var minHeight: CGFloat
+    @Binding var isFocused: Bool
+
+    func makeUIView(context: Context) -> UITextView {
+        let tv = UITextView()
+        tv.isScrollEnabled = true
+        tv.backgroundColor = UIColor.clear
+        tv.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        tv.delegate = context.coordinator
+        tv.textContainerInset = UIEdgeInsets.zero
+        tv.textContainer.lineFragmentPadding = 0
+        tv.isEditable = true
+        tv.layer.cornerRadius = 0
+        tv.layer.masksToBounds = true
+
+
+        let toolbar = UIToolbar(frame: .zero)
+        toolbar.sizeToFit()
+        toolbar.backgroundColor = UIColor.systemBackground
+        let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .done, target: context.coordinator, action: #selector(Coordinator.doneTapped))
+        done.tintColor = UIColor.systemBlue
+        toolbar.items = [flex, done]
+        tv.inputAccessoryView = toolbar
+
+        return tv
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        if uiView.text != text {
+            uiView.text = text
+        }
+        if text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            uiView.text = placeholder
+            uiView.textColor = UIColor.secondaryLabel
+        } else {
+            uiView.textColor = UIColor.label
+            uiView.text = text
+        }
+    }
+
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
+    final class Coordinator: NSObject, UITextViewDelegate {
+        var parent: SmartPlaceholderTextView
+        init(_ parent: SmartPlaceholderTextView) { self.parent = parent }
+
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            parent.isFocused = true
+            
+            if textView.text == parent.placeholder {
+                let placeholderText = parent.placeholder
+                if let dotsRange = placeholderText.range(of: "...") {
+                    let beforeDots = String(placeholderText[..<dotsRange.lowerBound])
+                    let afterDots = String(placeholderText[dotsRange.upperBound...])
+                    
+                    textView.text = beforeDots + afterDots
+                    textView.textColor = UIColor.label
+                    
+                    let cursorPosition = beforeDots.count
+                    if let newPosition = textView.position(from: textView.beginningOfDocument, offset: cursorPosition) {
+                        textView.selectedTextRange = textView.textRange(from: newPosition, to: newPosition)
+                    }
+                } else {
+                    textView.text = ""
+                    textView.textColor = UIColor.label
+                }
+            }
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView) {
+            parent.isFocused = false
+            let trimmed = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            parent.text = trimmed
+            if trimmed.isEmpty {
+                textView.text = parent.placeholder
+                textView.textColor = UIColor.secondaryLabel
+            }
+        }
+
+        func textViewDidChange(_ textView: UITextView) {
+            parent.text = textView.text
+        }
+
+        @objc func doneTapped() {
+            UIApplication.hideKeyboard()
+        }
+    }
+}
+
 struct MultilineTextView: UIViewRepresentable {
     @Binding var text: String
     var placeholder: String
@@ -89,7 +174,7 @@ struct MultilineTextView: UIViewRepresentable {
         tv.layer.cornerRadius = 0
         tv.layer.masksToBounds = true
 
-        // Modern accessory (Done button)
+
         let toolbar = UIToolbar(frame: .zero)
         toolbar.sizeToFit()
         toolbar.backgroundColor = UIColor.systemBackground
@@ -106,7 +191,6 @@ struct MultilineTextView: UIViewRepresentable {
         if uiView.text != text {
             uiView.text = text
         }
-        // placeholder handling
         if text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             uiView.text = placeholder
             uiView.textColor = UIColor.secondaryLabel
@@ -150,7 +234,6 @@ struct MultilineTextView: UIViewRepresentable {
     }
 }
 
-// MARK: - Modern UI Components
 struct CardTextEditorIOS14: View {
     @Binding var text: String
     var placeholder: String = ""
@@ -168,7 +251,7 @@ struct CardTextEditorIOS14: View {
                 .shadow(color: DesignSystem.Shadow.light, radius: 8, x: 0, y: 4)
                 .shadow(color: DesignSystem.Shadow.medium, radius: 2, x: 0, y: 1)
             
-            MultilineTextView(text: $text, placeholder: placeholder, minHeight: minHeight, isFocused: $isFocused)
+            SmartPlaceholderTextView(text: $text, placeholder: placeholder, minHeight: minHeight, isFocused: $isFocused)
                 .frame(minHeight: minHeight)
                 .padding(DesignSystem.Spacing.md)
         }
@@ -177,7 +260,6 @@ struct CardTextEditorIOS14: View {
     }
 }
 
-// MARK: - Toast
 struct ToastModifier: ViewModifier {
     @Binding var isPresented: Bool
     let message: String
@@ -206,7 +288,6 @@ struct BlurView: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
 
-// MARK: - Modern TextField
 struct ModernTextField: View {
     @Binding var text: String
     var placeholder: String
@@ -232,7 +313,6 @@ struct ModernTextField: View {
     }
 }
 
-// MARK: - Gratitude Entry Card
 struct GratitudeEntryCard: View {
     let index: Int
     let text: String
@@ -240,7 +320,6 @@ struct GratitudeEntryCard: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: DesignSystem.Spacing.md) {
-            // Index Circle
             ZStack {
                 Circle()
                     .fill(Color.accentMapped(UserDefaults.standard.string(forKey: "kansha.accent") ?? "purple").opacity(0.1))
@@ -252,7 +331,6 @@ struct GratitudeEntryCard: View {
                     .foregroundColor(Color.accentMapped(UserDefaults.standard.string(forKey: "kansha.accent") ?? "purple"))
             }
             
-            // Text Content
             VStack(alignment: .leading, spacing: DesignSystem.Spacing.xs) {
                 if text.isEmpty {
                     Text(languageManager.localized("not_available"))
@@ -277,7 +355,6 @@ struct GratitudeEntryCard: View {
     }
 }
 
-// MARK: - Modern Section
 struct ModernSection<Content: View>: View {
     let title: String
     let icon: String
@@ -312,7 +389,6 @@ struct ModernSection<Content: View>: View {
     }
 }
 
-// MARK: - Color Picker Button
 struct ColorPickerButton: View {
     let color: String
     let isSelected: Bool
@@ -341,7 +417,6 @@ struct ColorPickerButton: View {
     }
 }
 
-// MARK: - Language Picker Row
 struct LanguagePickerRow: View {
     let language: LanguageManager.LanguageInfo
     let isSelected: Bool

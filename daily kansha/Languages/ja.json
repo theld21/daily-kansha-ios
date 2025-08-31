@@ -14,7 +14,6 @@
   "reminder_title": "日々の感謝の実践",
   "reminder_body": "今日の一日を振り返る時間です。今日は何に感謝しますか？",
   "name_optional": "お名前（任意）",
-  "clear_all_data": "すべてのデータをクリア",
   "display": "表示設定",
   "dark_mode": "ダークモード",
   "light_mode": "ライトモード",
@@ -25,15 +24,7 @@
   "reminder_time": "リマインダー時間",
   "about": "感謝について",
   "about_description": "感謝（Kansha）は日本語で「感謝」を意味します。このマインドフルネスアプリは、毎晩3つの感謝を書き留めることで、平和で心のこもった日本のライフスタイル哲学に従って、日々の感謝の実践をサポートします。",
-  "version": "バージョン 1.0 - SwiftUI",
+  "version": "バージョン 1.0 - Theld21",
   "not_available": "まだ記録がありません",
-  "english": "English",
-  "vietnamese": "Tiếng Việt",
-  "japanese": "日本語",
-  "welcome_title": "感謝へようこそ",
-  "welcome_subtitle": "あなたの日々の感謝のパートナー",
-  "gratitude_practice": "感謝の実践",
-  "mindfulness": "マインドフルネス",
-  "daily_reflection": "日々の振り返り",
-  "peaceful_living": "平和な暮らし"
+  "gratitude_practice": "感謝の実践"
 }

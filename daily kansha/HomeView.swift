@@ -19,7 +19,6 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: DesignSystem.Spacing.lg) {
-                    // Header Section
                     VStack(alignment: .leading, spacing: DesignSystem.Spacing.sm) {
                         Text(languageManager.localized("today"))
                             .font(DesignSystem.Typography.largeTitle)
@@ -31,7 +30,6 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, DesignSystem.Spacing.md)
 
-                    // Instruction Section
                     VStack(alignment: .leading, spacing: DesignSystem.Spacing.md) {
                         Text(languageManager.localized("three_thanks_note"))
                             .font(DesignSystem.Typography.body)
@@ -40,7 +38,6 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, DesignSystem.Spacing.md)
 
-                    // Gratitude Inputs
                     VStack(spacing: DesignSystem.Spacing.md) {
                         ForEach(0..<3, id: \.self) { idx in
                             CardTextEditorIOS14(
@@ -51,7 +48,6 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, DesignSystem.Spacing.md)
 
-                    // Save Button
                     Button(action: save) {
                         HStack {
                             Image(systemName: "checkmark.circle.fill")

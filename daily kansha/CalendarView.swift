@@ -13,7 +13,6 @@ struct CalendarView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: DesignSystem.Spacing.lg) {
-                    // Calendar Section
                     VStack(spacing: DesignSystem.Spacing.md) {
                         DatePicker(languageManager.localized("calendar"), selection: $selected, displayedComponents: .date)
                             .datePickerStyle(GraphicalDatePickerStyle())
@@ -27,7 +26,6 @@ struct CalendarView: View {
                     )
                     .padding(.horizontal, DesignSystem.Spacing.md)
 
-                    // Gratitude Entries Section
                     VStack(alignment: .leading, spacing: DesignSystem.Spacing.md) {
                         HStack {
                             VStack(alignment: .leading, spacing: DesignSystem.Spacing.xs) {

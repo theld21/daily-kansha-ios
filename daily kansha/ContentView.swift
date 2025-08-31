@@ -1,10 +1,6 @@
 import SwiftUI
 
-// ContentView.swift
-// Main app structure with TabView
-// Compatible with iOS 14+ (Xcode 14.2)
-
-// MARK: - Main Views
+// MARK: - ContentView
 struct ContentView: View {
     @AppStorage("kansha.darkMode") private var isDarkMode: Bool = false
     @StateObject private var languageManager = LanguageManager()
@@ -62,14 +58,10 @@ struct MainTabView: View {
         }
         .accentColor(accentColor)
         .onAppear {
-            // Modern tab bar appearance
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = UIColor.systemBackground
-            
-            // Add subtle shadow
             appearance.shadowColor = UIColor.black.withAlphaComponent(0.1)
-            
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }

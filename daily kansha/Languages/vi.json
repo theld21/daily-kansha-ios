@@ -14,7 +14,6 @@
   "reminder_title": "Thực hành lòng biết ơn hàng ngày",
   "reminder_body": "Hãy dành một chút thời gian để suy ngẫm về ngày của bạn. Hôm nay bạn biết ơn điều gì?",
   "name_optional": "Tên của bạn (Tùy chọn)",
-  "clear_all_data": "Xóa tất cả dữ liệu",
   "display": "Cài đặt hiển thị",
   "dark_mode": "Chế độ tối",
   "light_mode": "Chế độ sáng",
@@ -25,15 +24,7 @@
   "reminder_time": "Thời gian nhắc nhở",
   "about": "Về Kansha",
   "about_description": "Kansha (感謝) có nghĩa là 'lòng biết ơn' trong tiếng Nhật. Ứng dụng chánh niệm này giúp bạn nuôi dưỡng lòng biết ơn hàng ngày bằng cách viết ra ba điều bạn biết ơn mỗi tối, theo triết lý sống bình yên và chánh niệm của người Nhật.",
-  "version": "Phiên bản 1.0 - SwiftUI",
+  "version": "Phiên bản 1.0 - Theld21",
   "not_available": "Chưa có mục nào",
-  "english": "English",
-  "vietnamese": "Tiếng Việt",
-  "japanese": "日本語",
-  "welcome_title": "Chào mừng đến với Kansha",
-  "welcome_subtitle": "Người bạn đồng hành lòng biết ơn hàng ngày",
-  "gratitude_practice": "Thực hành lòng biết ơn",
-  "mindfulness": "Chánh niệm",
-  "daily_reflection": "Suy ngẫm hàng ngày",
-  "peaceful_living": "Sống bình yên"
+  "gratitude_practice": "Thực hành lòng biết ơn"
 }

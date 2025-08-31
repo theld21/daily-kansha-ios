@@ -14,7 +14,6 @@
   "reminder_title": "Daily Gratitude Practice",
   "reminder_body": "Take a moment to reflect on your day. What are you grateful for today?",
   "name_optional": "Your Name (Optional)",
-  "clear_all_data": "Clear All Data",
   "display": "Display Settings",
   "dark_mode": "Dark Mode",
   "light_mode": "Light Mode",
@@ -25,15 +24,7 @@
   "reminder_time": "Reminder Time",
   "about": "About Kansha",
   "about_description": "Kansha (感謝) means 'gratitude' in Japanese. This mindfulness app helps you cultivate daily gratitude by writing down three things you're thankful for each evening, following the peaceful and mindful Japanese lifestyle philosophy.",
-  "version": "Version 1.0 - SwiftUI",
+  "version": "Version 1.0 - Theld21",
   "not_available": "No entry yet",
-  "english": "English",
-  "vietnamese": "Tiếng Việt",
-  "japanese": "日本語",
-  "welcome_title": "Welcome to Kansha",
-  "welcome_subtitle": "Your daily gratitude companion",
-  "gratitude_practice": "Gratitude Practice",
-  "mindfulness": "Mindfulness",
-  "daily_reflection": "Daily Reflection",
-  "peaceful_living": "Peaceful Living"
+  "gratitude_practice": "Gratitude Practice"
 }
